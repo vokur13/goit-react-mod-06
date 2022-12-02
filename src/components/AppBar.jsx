@@ -16,7 +16,8 @@ export const AppBar = () => {
       }}
     >
       <nav>
-        <Link to="login">Log in</Link>
+        {!isLoggedIn && <Link to="login">Log in</Link>}
+        {isLoggedIn && <Link to="dashboard">Dashboard</Link>}
       </nav>
       {isLoggedIn && <UserMenu />}
     </header>
